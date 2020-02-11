@@ -1,0 +1,21 @@
+public interface IRepositoryBase<T> where T : class
+    {
+        ICollection<T> FindAll();
+        T FindById(int id);
+        bool Create(T entity);
+        bool Update(T entity);
+        bool Delete(T entity);
+        bool Save();
+    }
+	public interface ILeaveHistoryRepository : IRepositoryBase<LeaveHistory>
+    {
+    }
+	
+	public interface ILeaveAllocationRepository : IRepositoryBase<LeaveAllocation>
+    {
+    }
+	
+	public interface ILeaveTypeRepository : IRepositoryBase<LeaveType>
+    {
+        ICollection<LeaveType> GetEmployeesByLeaveType(int id);
+    }

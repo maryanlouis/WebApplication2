@@ -1,0 +1,123 @@
+public class LeaveHistoryRepository : ILeaveHistoryRepository
+    {
+        private readonly ApplicationDbContext _db;
+
+        public LeaveHistoryRepository(ApplicationDbContext db)
+        {
+            _db = db;
+        }
+
+        public bool Create(LeaveHistory entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Delete(LeaveHistory entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ICollection<LeaveHistory> FindAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public LeaveHistory FindById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Save()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Update(LeaveHistory entity)
+        {
+            throw new NotImplementedException();
+        }
+    }
+	
+	public class LeaveAllocationRepository : ILeaveAllocationRepository
+    {
+        private readonly ApplicationDbContext _db;
+
+        public LeaveAllocationRepository(ApplicationDbContext db)
+        {
+            _db = db;
+        }
+        public bool Create(LeaveAllocation entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Delete(LeaveAllocation entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ICollection<LeaveAllocation> FindAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public LeaveAllocation FindById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Save()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Update(LeaveAllocation entity)
+        {
+            throw new NotImplementedException();
+        }
+    }
+	
+	public class LeaveTypeRepository : ILeaveTypeRepository
+    {
+        private readonly ApplicationDbContext _db;
+
+        public LeaveTypeRepository(ApplicationDbContext db)
+        {
+            _db = db;
+        } 
+
+        public bool Create(LeaveType entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Delete(LeaveType entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ICollection<LeaveType> FindAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public LeaveType FindById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ICollection<LeaveType> GetEmployeesByLeaveType(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Save()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Update(LeaveType entity)
+        {
+            throw new NotImplementedException();
+        }
+    }
