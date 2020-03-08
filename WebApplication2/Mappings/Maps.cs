@@ -12,8 +12,8 @@ namespace WebApplication2.Mappings
     {
         public Maps()
         {
-            CreateMap<LeaveType, DetailsLeaveTypeVM>().ReverseMap();
-            CreateMap<LeaveType, CreateLeaveTypeVM>().ReverseMap();
+            CreateMap<LeaveType, LeaveTypeVM>().ReverseMap();
+            //CreateMap<LeaveType, CreateLeaveTypeVM>().ReverseMap();
             CreateMap<LeaveAllocation , LeaveAllocationVM>().ReverseMap();
             CreateMap<LeaveHistory, LeaveHistoryVM>().ReverseMap();
             CreateMap<Employee, EmployeeVM>().ReverseMap();
