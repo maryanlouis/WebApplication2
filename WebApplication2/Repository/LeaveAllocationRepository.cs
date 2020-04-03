@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,6 +16,15 @@ namespace WebApplication2.Repository
         {
             _db = db;
         }
+
+        public bool CheckAllocation(int leavetypeid, string employeeid)
+        {
+            var period = DateTime.Now.Year;
+            return FindAll()
+                .Where(q => q.EmployeeId == employeeid && q.LeaveTypeId == leavetypeid && q.Period == period)
+                .Any();
+        }
+
         public bool Create(LeaveAllocation entity)
         {
             _db.LeaveAllocations.Add(entity);
@@ -29,15 +39,30 @@ namespace WebApplication2.Repository
 
         public ICollection<LeaveAllocation> FindAll()
         {
-            var leaveAllocations = _db.LeaveAllocations.ToList();
+            var leaveAllocations = _db.LeaveAllocations
+                .Include(q=>q.LeaveType)
+                .Include(q => q.Employee)
+                .ToList();
             return leaveAllocations;
         }
 
         public LeaveAllocation FindById(int id)
         {
-            var leaveAllocations = _db.LeaveAllocations.Find(id);
+            var leaveAllocations = _db.LeaveAllocations
+                .Include(q => q.LeaveType)
+                .Include(q => q.Employee)
+                .FirstOrDefault(q=> q.Id==id);
+                //.Find(id);
             //_db.LeaveTypes.FirstOrDefault();
             return leaveAllocations;
+        }
+
+        public ICollection<LeaveAllocation> GetLeaveAllocationsByEmployee(string id)
+        {
+            var period = DateTime.Now.Year;
+            return FindAll()
+                    .Where(q => q.EmployeeId == id && q.Period == period)
+                    .ToList();
         }
 
         public bool isExists(int id)

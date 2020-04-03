@@ -19,5 +19,8 @@ namespace WebApplication2.Data
         public DbSet<LeaveType> LeaveTypes { get; set; }
         public DbSet<LeaveAllocation> LeaveAllocations { get; set; }
         public DbSet<WebApplication2.Models.LeaveTypeVM> DetailsLeaveTypeVM { get; set; }
+        public DbSet<WebApplication2.Models.EmployeeVM> EmployeeVM { get; set; }
+        public DbSet<WebApplication2.Models.LeaveAllocationVM> LeaveAllocationVM { get; set; }
+        public DbSet<WebApplication2.Models.EditLeaveAllocationVM> EditLeaveAllocationVM { get; set; }
     }
 }
