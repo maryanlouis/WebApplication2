@@ -57,12 +57,20 @@ namespace WebApplication2.Repository
             return leaveAllocations;
         }
 
-        public ICollection<LeaveAllocation> GetLeaveAllocationsByEmployee(string id)
+        public ICollection<LeaveAllocation> GetLeaveAllocationsByEmployee(string employeeid)
         {
             var period = DateTime.Now.Year;
             return FindAll()
-                    .Where(q => q.EmployeeId == id && q.Period == period)
+                    .Where(q => q.EmployeeId == employeeid && q.Period == period)
                     .ToList();
+        }
+
+        public LeaveAllocation GetLeaveAllocationsByEmployeeAndType(string employeeid, int leavetypeid)
+        {
+            var period = DateTime.Now.Year;
+            return FindAll()
+                    .FirstOrDefault(q => q.EmployeeId == employeeid && q.Period == period && q.LeaveTypeId == leavetypeid);
+                   
         }
 
         public bool isExists(int id)
@@ -82,5 +90,7 @@ namespace WebApplication2.Repository
             _db.LeaveAllocations.Update(entity);
             return Save();
         }
+
+
     }
 }
