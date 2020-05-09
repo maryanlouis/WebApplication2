@@ -143,7 +143,11 @@
                 @Html.DisplayFor(modelItem => item.DateActioned)
             </td>*@
         <td>
-            @if (item.Approved == true)
+            @if (item.Cancelled)
+            {
+                <span class="badge badge-secondary">Cancelled</span>
+            }
+            else if (item.Approved == true)
             {
                 <span class="badge badge-success">Approved</span>
             }
