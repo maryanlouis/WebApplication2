@@ -5,6 +5,11 @@
     <UserSecretsId>aspnet-WebApplication2-BBBD6C2A-DCE0-4504-8AF0-58ADCD997863</UserSecretsId>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Data\Migrations\20200519105703_RemovedVMTables.cs" />
+    <Compile Remove="Data\Migrations\20200519105703_RemovedVMTables.Designer.cs" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="9.0.0" />
